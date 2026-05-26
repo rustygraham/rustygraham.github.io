@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://rustygraham.github.io/sitemap.xml
