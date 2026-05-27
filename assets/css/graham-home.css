@@ -359,7 +359,7 @@ body:is(.page-template, .blogindex-template, .post-template) .top a {
   gap: 7px;
   height: 10px;
   justify-content: center;
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 .graham-carousel__dots button {
@@ -640,11 +640,19 @@ body.graham-page--blog .navbar .navbar__menu > li.is-active > a {
 }
 
 .graham-about__card {
-  background: #f7f7f7;
-  box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.18), 3px 2px 7px -5px rgba(0, 0, 0, 0.14), -3px 2px 7px -5px rgba(0, 0, 0, 0.14);
+  background: transparent;
   margin: 0 auto;
   max-width: 984px;
   padding: 29px;
+  position: relative;
+}
+
+.graham-about__card::before {
+  background: #f7f7f7;
+  box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.18), 3px 2px 7px -5px rgba(0, 0, 0, 0.14), -3px 2px 7px -5px rgba(0, 0, 0, 0.14);
+  content: "";
+  inset: 6px 68px 18px;
+  position: absolute;
 }
 
 .graham-about__layout {
@@ -655,6 +663,8 @@ body.graham-page--blog .navbar .navbar__menu > li.is-active > a {
   justify-content: center;
   margin: 0 auto;
   max-width: 790px;
+  position: relative;
+  z-index: 1;
 }
 
 .graham-about__portrait {
@@ -722,32 +732,91 @@ body.graham-page--blog .navbar .navbar__menu > li.is-active > a {
 }
 
 .graham-portfolio__videos {
-  border-bottom: 1px solid #dfdfdf;
-  border-top: 1px solid #dfdfdf;
   display: grid;
   gap: 27px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  padding: 32px 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 870px;
+  padding: 32px 0 0;
+}
+
+.graham-portfolio__video-item {
+  margin: 0;
+  text-align: center;
 }
 
 .graham-portfolio__video {
-  aspect-ratio: 1.47 / 1;
-  overflow: hidden;
-}
-
-.graham-portfolio__video iframe {
+  background: transparent;
   border: 0;
+  cursor: pointer;
   display: block;
-  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
   width: 100%;
 }
 
+.graham-portfolio__video-thumbnail {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.graham-portfolio__video:hover,
+.graham-portfolio__video:focus,
+.graham-portfolio__video:active {
+  background: transparent;
+  color: inherit;
+}
+
+.graham-portfolio__video-play {
+  height: auto;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 180ms ease-out;
+  width: 48px;
+}
+
+.graham-portfolio__video:hover .graham-portfolio__video-play,
+.graham-portfolio__video:focus-visible .graham-portfolio__video-play {
+  transform: translate(-50%, -50%) scale(1.045);
+}
+
+.graham-portfolio__video-title {
+  color: #686868;
+  display: block;
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-variation-settings: "wght" 400;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.45;
+  margin-top: 3px;
+  position: relative;
+  top: -11px;
+}
+
 .graham-portfolio__project {
-  margin: 47px auto 0;
+  margin: 23px auto 0;
+  padding-top: 32px;
+  position: relative;
+}
+
+.graham-portfolio__project::before {
+  background: linear-gradient(90deg, transparent, #dfdfdf 12%, #dfdfdf 88%, transparent);
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .graham-portfolio__heading {
-  color: #a1a1a1;
+  color: #686868;
   font-family: var(--body-font);
   font-size: 16px;
   font-variation-settings: "wght" 400;
@@ -783,12 +852,22 @@ body.graham-page--blog .navbar .navbar__menu > li.is-active > a {
 }
 
 .graham-portfolio__gallery {
-  border-top: 1px solid #dfdfdf;
   display: grid;
   gap: 27px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 34px auto 0;
   padding-top: 32px;
+  position: relative;
+}
+
+.graham-portfolio__gallery::before {
+  background: linear-gradient(90deg, transparent, #dfdfdf 12%, #dfdfdf 88%, transparent);
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .graham-portfolio__gallery-column {
@@ -881,6 +960,24 @@ body.graham-lightbox-open {
 .graham-lightbox__stage .graham-carousel__arrow:focus-visible {
   opacity: 1;
   visibility: visible;
+}
+
+.graham-video-lightbox__frame {
+  aspect-ratio: 16 / 9;
+  background: #000;
+  width: min(100%, 1480px, calc((100vh - 96px) * 16 / 9));
+}
+
+.graham-video-lightbox__frame iframe {
+  border: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.graham-video-lightbox__frame.is-portrait {
+  aspect-ratio: 9 / 16;
+  width: min(100%, 630px, calc((100vh - 96px) * 9 / 16));
 }
 
 .graham-blog {
@@ -1274,6 +1371,10 @@ body:is(.page-template, .blogindex-template, .post-template) .footer__social svg
     padding: 20px;
   }
 
+  .graham-about__card::before {
+    inset: 0;
+  }
+
   .graham-about__portrait {
     margin: 0 auto;
     max-width: 354px;
@@ -1290,11 +1391,15 @@ body:is(.page-template, .blogindex-template, .post-template) .footer__social svg
   }
 
   .graham-portfolio__videos {
-    padding: 24px 0;
+    padding: 24px 0 0;
+  }
+
+  .graham-portfolio__video-play {
+    width: 44px;
   }
 
   .graham-portfolio__project {
-    margin-top: 40px;
+    margin-top: 23px;
   }
 
   .graham-lightbox {
@@ -1303,6 +1408,14 @@ body:is(.page-template, .blogindex-template, .post-template) .footer__social svg
 
   .graham-lightbox__stage {
     max-height: calc(100vh - 78px);
+  }
+
+  .graham-video-lightbox__frame {
+    width: min(100%, calc((100vh - 78px) * 16 / 9));
+  }
+
+  .graham-video-lightbox__frame.is-portrait {
+    width: min(100%, calc((100vh - 78px) * 9 / 16));
   }
 
   .graham-lightbox__stage .graham-carousel__arrow {

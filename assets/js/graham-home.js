@@ -12,6 +12,13 @@
     setupLightbox(lightbox, lightboxTriggers);
   }
 
+  var videoLightbox = document.querySelector('.js-graham-video-lightbox');
+  var videoTriggers = document.querySelectorAll('.js-graham-video-trigger');
+
+  if (videoLightbox && videoTriggers.length) {
+    setupVideoLightbox(videoLightbox, videoTriggers);
+  }
+
   function setupCarousel(carousel) {
     var slides = carousel.querySelectorAll('.graham-carousel__slide');
     var dots = carousel.querySelectorAll('.graham-carousel__dots button');
@@ -184,6 +191,86 @@
         showImage(index - 1);
       } else if (event.key === 'ArrowRight') {
         showImage(index + 1);
+      }
+    });
+  }
+
+  function setupVideoLightbox(lightboxElement, triggers) {
+    var frame = lightboxElement.querySelector('.js-graham-video-lightbox-frame');
+    var frameContainer = lightboxElement.querySelector('.graham-video-lightbox__frame');
+    var closeButton = lightboxElement.querySelector('.js-graham-video-lightbox-close');
+    var previousButton = lightboxElement.querySelector('.js-graham-video-lightbox-previous');
+    var nextButton = lightboxElement.querySelector('.js-graham-video-lightbox-next');
+    var index = 0;
+    var returnFocus = null;
+
+    function showVideo(nextIndex) {
+      if (nextIndex < 0) {
+        nextIndex = triggers.length - 1;
+      } else if (nextIndex >= triggers.length) {
+        nextIndex = 0;
+      }
+
+      index = nextIndex;
+      var provider = triggers[index].getAttribute('data-video-provider') || 'youtube';
+      var videoId = encodeURIComponent(triggers[index].getAttribute('data-video-id'));
+      frame.title = triggers[index].getAttribute('data-video-title') || 'Portfolio project video';
+      frameContainer.classList.toggle('is-portrait', provider === 'tiktok');
+
+      if (provider === 'tiktok') {
+        frame.src = 'https://www.tiktok.com/player/v1/' + videoId + '?autoplay=1';
+      } else {
+        frame.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&playsinline=1';
+      }
+    }
+
+    function openLightbox(nextIndex, trigger) {
+      returnFocus = trigger;
+      showVideo(nextIndex);
+      lightboxElement.classList.add('is-open');
+      lightboxElement.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('graham-lightbox-open');
+      closeButton.focus();
+    }
+
+    function closeLightbox() {
+      lightboxElement.classList.remove('is-open');
+      lightboxElement.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('graham-lightbox-open');
+      frame.src = '';
+      frameContainer.classList.remove('is-portrait');
+
+      if (returnFocus) {
+        returnFocus.focus();
+      }
+    }
+
+    for (var triggerIndex = 0; triggerIndex < triggers.length; triggerIndex++) {
+      triggers[triggerIndex].setAttribute('data-video-index', triggerIndex);
+      triggers[triggerIndex].addEventListener('click', function () {
+        openLightbox(parseInt(this.getAttribute('data-video-index'), 10), this);
+      });
+    }
+
+    closeButton.addEventListener('click', closeLightbox);
+    previousButton.addEventListener('click', function () {
+      showVideo(index - 1);
+    });
+    nextButton.addEventListener('click', function () {
+      showVideo(index + 1);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (!lightboxElement.classList.contains('is-open')) {
+        return;
+      }
+
+      if (event.key === 'Escape') {
+        closeLightbox();
+      } else if (event.key === 'ArrowLeft') {
+        showVideo(index - 1);
+      } else if (event.key === 'ArrowRight') {
+        showVideo(index + 1);
       }
     });
   }
