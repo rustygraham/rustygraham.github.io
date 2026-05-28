@@ -356,52 +356,79 @@ body:is(.page-template, .blogindex-template, .post-template) .top a {
 .graham-carousel__dots {
   align-items: center;
   display: flex;
-  gap: 7px;
+  font-size: 0;
+  gap: 13px;
   height: 10px;
   justify-content: center;
+  line-height: 0;
   margin-top: 20px;
 }
 
 .graham-carousel__dots button {
-  background: #c9c9c9;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
   border: 0;
-  border-radius: 50%;
+  border-radius: 0;
+  box-shadow: none;
   display: block;
   flex: 0 0 10px;
   height: 10px;
-  margin-left: 0;
-  margin: 0;
+  line-height: 0;
+  margin: 0 !important;
+  min-height: 0;
+  min-width: 0;
+  overflow: visible;
   padding: 0;
-  transform: scale(1);
-  transition: background-color 300ms ease, flex-basis 300ms ease, height 300ms ease, margin-left 300ms ease, opacity 300ms ease, transform 300ms ease, width 300ms ease;
+  position: relative;
+  transform: none;
+  transition: flex-basis 300ms ease, margin-left 300ms ease, width 300ms ease;
   width: 10px;
 }
 
-.graham-carousel__dots button.is-active {
+.graham-carousel__dots button::before {
+  background: #c9c9c9;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 10px;
+  left: 50%;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center;
+  transition: background-color 300ms ease, opacity 300ms ease, transform 300ms ease;
+  width: 10px;
+}
+
+.graham-carousel__dots button.is-active::before {
   background: #252525;
 }
 
 .graham-carousel__dots button.is-dot-hidden {
   flex-basis: 0;
-  height: 0;
-  margin-left: -7px;
-  opacity: 0;
+  margin-left: -13px !important;
   pointer-events: none;
-  transform: scale(0);
   width: 0;
 }
 
-.graham-carousel__dots button.is-dot-small {
-  transform: scale(0.7);
+.graham-carousel__dots button.is-dot-hidden::before {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
 }
 
-.graham-carousel__dots button.is-dot-tiny {
+.graham-carousel__dots button.is-dot-small::before {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+.graham-carousel__dots button.is-dot-tiny::before {
   opacity: 0.85;
-  transform: scale(0.45);
+  transform: translate(-50%, -50%) scale(0.45);
 }
 
-.graham-carousel__dots button:hover,
-.graham-carousel__dots button:focus {
+.graham-carousel__dots button:hover::before,
+.graham-carousel__dots button:focus::before {
   background: #646464;
 }
 
@@ -1116,7 +1143,12 @@ body.graham-lightbox-open {
 
 .graham-post .hero {
   margin: 0 auto;
-  max-width: 820px;
+  max-width: 720px;
+}
+
+.graham-post .hero--noimage::after {
+  content: none;
+  display: none;
 }
 
 .graham-post .hero__content {
@@ -1142,15 +1174,7 @@ body.graham-lightbox-open {
   color: #666;
   font-family: var(--body-font);
   font-size: 14px;
-  margin-top: 20px;
-}
-
-.graham-post .hero__image {
-  margin-top: 42px;
-}
-
-.graham-post .hero__image img {
-  border-radius: 0;
+  margin-top: 9px;
 }
 
 .graham-post .content__entry,
@@ -1339,12 +1363,16 @@ body:is(.page-template, .blogindex-template, .post-template) .footer__social svg
   }
 
   .graham-home__mentions,
-  .graham-home__tiles,
   .graham-portfolio__videos,
   .graham-portfolio__vr-images,
   .graham-portfolio__gallery,
   .graham-blog__item {
     grid-template-columns: 1fr;
+  }
+
+  .graham-home__tiles {
+    gap: clamp(8px, 3vw, 27px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .graham-home__mentions {
