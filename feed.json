@@ -40,6 +40,21 @@
             "date_modified": "2026-05-26T13:33:07-04:00"
         },
         {
+            "id": "https://www.grahamrust.me/blog/games-built-in-dreams-for-playstation-4/index.html",
+            "url": "https://www.grahamrust.me/blog/games-built-in-dreams-for-playstation-4/index.html",
+            "title": "Games Made in Dreams for Playstation",
+            "summary": "Playable on Playstation 4/5 in Dreams at https://indreams.me/GrhmRst Game 1: Nostalgia Maze Both are remixable (ie. they're open-source) and stand-alone Contraptions are available, so you can place an arcade machine or labyrinth game inside your creations.",
+            "content_html": "<p>Playable on Playstation 4/5 in Dreams at <a href=\"https://indreams.me/GrhmRst\">https://indreams.me/GrhmRst </a></p>\n<p>Game 1: Nostalgia Maze</p>\n<figure class=\"post__image\"><img loading=\"lazy\"  src=\"https://www.grahamrust.me/media/posts/17/2020-04-07.png\" alt=\"\" width=\"1429\" height=\"970\" sizes=\"(max-width: 1920px) 100vw, 1920px\" srcset=\"https://www.grahamrust.me/media/posts/17/responsive/2020-04-07-xs.png 640w ,https://www.grahamrust.me/media/posts/17/responsive/2020-04-07-sm.png 768w ,https://www.grahamrust.me/media/posts/17/responsive/2020-04-07-md.png 1024w ,https://www.grahamrust.me/media/posts/17/responsive/2020-04-07-lg.png 1366w ,https://www.grahamrust.me/media/posts/17/responsive/2020-04-07-xl.png 1600w ,https://www.grahamrust.me/media/posts/17/responsive/2020-04-07-2xl.png 1920w\"></figure>\n<figure class=\"post__image\"><img loading=\"lazy\"  src=\"https://www.grahamrust.me/media/posts/17/Nostalgia-Maze.png\" alt=\"\" width=\"698\" height=\"347\" sizes=\"(max-width: 1920px) 100vw, 1920px\" srcset=\"https://www.grahamrust.me/media/posts/17/responsive/Nostalgia-Maze-xs.png 640w ,https://www.grahamrust.me/media/posts/17/responsive/Nostalgia-Maze-sm.png 768w ,https://www.grahamrust.me/media/posts/17/responsive/Nostalgia-Maze-md.png 1024w ,https://www.grahamrust.me/media/posts/17/responsive/Nostalgia-Maze-lg.png 1366w ,https://www.grahamrust.me/media/posts/17/responsive/Nostalgia-Maze-xl.png 1600w ,https://www.grahamrust.me/media/posts/17/responsive/Nostalgia-Maze-2xl.png 1920w\"></figure>\n<p> </p>\n<p> </p>\n<p> </p>\n<p> </p>\n<p> </p>\n<p> </p>\n<p> </p>\n<p> </p>\n<p> </p>\n<p>Both are remixable (ie. they're open-source) and stand-alone Contraptions are available, so you can place an arcade machine or labyrinth game inside your creations. </p>\n<p> </p>",
+            "image": "https://www.grahamrust.me/media/posts/17/featured2.png",
+            "author": {
+                "name": "Graham Rust"
+            },
+            "tags": [
+            ],
+            "date_published": "2020-04-07T12:00:00-04:00",
+            "date_modified": "2026-05-31T20:24:54-04:00"
+        },
+        {
             "id": "https://www.grahamrust.me/blog/workspace-comparisons-3/index.html",
             "url": "https://www.grahamrust.me/blog/workspace-comparisons-3/index.html",
             "title": "Workspace Comparisons",
@@ -112,7 +127,7 @@
             "tags": [
             ],
             "date_published": "2015-02-14T17:00:00-05:00",
-            "date_modified": "2026-05-26T13:36:50-04:00"
+            "date_modified": "2026-05-30T23:10:47-04:00"
         }
     ]
 }
