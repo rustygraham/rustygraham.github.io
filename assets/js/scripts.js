@@ -320,6 +320,10 @@ window.addEventListener('scroll', () => {
       return;
     }
 
+    if (!document.querySelector(config.buttonSelector)) {
+      return;
+    }
+
     initSubmenuPositions();
 
     if (config.mobileMenuMode === 'overlay') {
