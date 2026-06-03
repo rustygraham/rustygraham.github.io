@@ -19,6 +19,128 @@
     setupVideoLightbox(videoLightbox, videoTriggers);
   }
 
+  setupTweetTheme();
+
+  function setupTweetTheme() {
+    var tweetWrappers = document.querySelectorAll('.js-graham-tweet');
+    var tweetRenderToken = 0;
+
+    if (!tweetWrappers.length) {
+      return;
+    }
+
+    function getTweetTheme() {
+      return document.documentElement.classList.contains('graham-theme-dark') ? 'dark' : 'light';
+    }
+
+    function releaseTweetHeights(outputs, token) {
+      if (token !== tweetRenderToken) {
+        return;
+      }
+
+      for (var outputIndex = 0; outputIndex < outputs.length; outputIndex++) {
+        outputs[outputIndex].style.height = '';
+        outputs[outputIndex].style.minHeight = '';
+        outputs[outputIndex].classList.remove('is-loading');
+        outputs[outputIndex].classList.remove('is-loading-dark');
+      }
+    }
+
+    function waitForRenderedTweets(outputs, attempts, token) {
+      if (token !== tweetRenderToken) {
+        return;
+      }
+
+      var rendered = true;
+
+      for (var outputIndex = 0; outputIndex < outputs.length; outputIndex++) {
+        var card = outputs[outputIndex].querySelector('iframe, .twitter-tweet-rendered');
+
+        if (!card || card.offsetHeight < 80) {
+          rendered = false;
+          break;
+        }
+      }
+
+      if (rendered || attempts <= 0) {
+        window.setTimeout(function () {
+          releaseTweetHeights(outputs, token);
+        }, 220);
+        return;
+      }
+
+      window.setTimeout(function () {
+        waitForRenderedTweets(outputs, attempts - 1, token);
+      }, 120);
+    }
+
+    function loadTwitterWidgets(outputs, attempts, token) {
+      if (token !== tweetRenderToken) {
+        return;
+      }
+
+      if (window.twttr && window.twttr.widgets && typeof window.twttr.widgets.load === 'function') {
+        for (var outputIndex = 0; outputIndex < outputs.length; outputIndex++) {
+          window.twttr.widgets.load(outputs[outputIndex]);
+        }
+
+        waitForRenderedTweets(outputs, 45, token);
+        return;
+      }
+
+      if (attempts > 0) {
+        window.setTimeout(function () {
+          loadTwitterWidgets(outputs, attempts - 1, token);
+        }, 120);
+      } else {
+        releaseTweetHeights(outputs, token);
+      }
+    }
+
+    function renderTweets(theme) {
+      tweetRenderToken++;
+
+      var renderToken = tweetRenderToken;
+      var outputs = [];
+
+      for (var wrapperIndex = 0; wrapperIndex < tweetWrappers.length; wrapperIndex++) {
+        var wrapper = tweetWrappers[wrapperIndex];
+        var template = wrapper.querySelector('template');
+        var output = wrapper.querySelector('.js-graham-tweet-output');
+
+        if (!template || !output) {
+          continue;
+        }
+
+        var outputHeight = Math.ceil(output.getBoundingClientRect().height);
+
+        if (outputHeight > 0) {
+          output.style.height = outputHeight + 'px';
+          output.style.minHeight = outputHeight + 'px';
+          output.classList.add('is-loading');
+          output.classList.toggle('is-loading-dark', theme === 'dark');
+        }
+
+        output.innerHTML = template.innerHTML.trim();
+        outputs.push(output);
+
+        var tweet = output.querySelector('.twitter-tweet');
+
+        if (tweet) {
+          tweet.setAttribute('data-theme', theme);
+        }
+      }
+
+      loadTwitterWidgets(outputs, 25, renderToken);
+    }
+
+    renderTweets(getTweetTheme());
+
+    window.addEventListener('graham-theme-change', function (event) {
+      renderTweets(event.detail && event.detail.dark ? 'dark' : 'light');
+    });
+  }
+
   function setupCarousel(carousel) {
     var slides = carousel.querySelectorAll('.graham-carousel__slide');
     var dots = carousel.querySelectorAll('.graham-carousel__dots button');
@@ -186,10 +308,16 @@
       }
 
       if (event.key === 'Escape') {
+        event.preventDefault();
+        event.stopPropagation();
         closeLightbox();
       } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        event.stopPropagation();
         showImage(index - 1);
       } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        event.stopPropagation();
         showImage(index + 1);
       }
     });
@@ -266,10 +394,16 @@
       }
 
       if (event.key === 'Escape') {
+        event.preventDefault();
+        event.stopPropagation();
         closeLightbox();
       } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        event.stopPropagation();
         showVideo(index - 1);
       } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        event.stopPropagation();
         showVideo(index + 1);
       }
     });

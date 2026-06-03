@@ -578,6 +578,56 @@ html.graham-theme-dark .graham-theme-toggle {
   min-width: 0;
 }
 
+.graham-tweet,
+.js-graham-tweet-output {
+  min-width: 0;
+  width: 100%;
+}
+
+.graham-tweet {
+  display: flex;
+  justify-content: center;
+}
+
+.js-graham-tweet-output {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 550px;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 260ms ease;
+}
+
+.js-graham-tweet-output.is-loading {
+  background: #f4f4f4;
+}
+
+.js-graham-tweet-output.is-loading.is-loading-dark {
+  background: #15202b !important;
+  transition: none;
+}
+
+.js-graham-tweet-output.is-loading > .twitter-tweet {
+  color: transparent;
+  opacity: 0;
+}
+
+.js-graham-tweet-output.is-loading > .twitter-tweet a {
+  color: transparent;
+}
+
+.graham-tweet iframe,
+.graham-tweet .twitter-tweet-rendered {
+  background: #fff !important;
+  border-radius: 12px !important;
+  display: block !important;
+  margin: 0 auto !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  width: 100% !important;
+}
+
 .graham-home__gallery + .graham-home__mentions {
   margin-top: 60px;
 }
@@ -1924,6 +1974,41 @@ html.graham-theme-dark .content__nav-link:hover {
 
 html.graham-theme-dark .graham-home__mentions .twitter-tweet {
   color: #d9d6d1;
+}
+
+html.graham-theme-dark .js-graham-tweet-output,
+html.graham-theme-dark .js-graham-tweet-output.is-loading,
+html.graham-theme-dark .graham-tweet iframe,
+html.graham-theme-dark .graham-tweet .twitter-tweet-rendered {
+  background: #15202b !important;
+}
+
+html.graham-theme-dark .js-graham-tweet-output::after {
+  background: #15202b;
+  bottom: 0;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 14px;
+  z-index: 1;
+}
+
+html.graham-theme-dark .js-graham-tweet-output::before {
+  background: rgba(139, 152, 165, 0.7);
+  bottom: 12px;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 12px;
+  width: 1px;
+  z-index: 2;
+}
+
+html.graham-theme-dark .js-graham-tweet-output.is-loading::before {
+  content: none;
 }
 
 html.graham-theme-dark .graham-about__card::before,
