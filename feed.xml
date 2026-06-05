@@ -3,7 +3,7 @@
     <title>Graham Rust</title>
     <link href="https://www.grahamrust.me/feed.xml" rel="self" />
     <link href="https://www.grahamrust.me" />
-    <updated>2026-06-04T23:26:38-04:00</updated>
+    <updated>2026-06-05T00:02:42-04:00</updated>
     <author>
         <name>Graham Rust</name>
     </author>
@@ -29,7 +29,9 @@
             <![CDATA[
                     <p><img src="https://www.grahamrust.me/media/posts/10/vrball-2.jpg" class="type:primaryImage" alt="" /></p>
                 <div class="align-center">Made with Autodesk Maya/Fusion and brought into Unreal Engine. Download the <a href="https://grabcad.com/library/vr-ball-for-tundra-tracker-1">3D model</a> now to have a ball in VR!</div>
-<div class="post__video"><div class="post__iframe"><iframe loading="lazy" width="696" height="389" style="width: 696px; height: 389px;" src="https://www.youtube.com/embed/tfgQtob6GWI" title="Video" allowfullscreen="allowfullscreen"></iframe></div></div>
+<div>
+<script async="" src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+</div>
 <p class="align-center"><a href="https://www.grahamrust.me/media/posts/10/vrball.jpg"><img loading="lazy" src="https://www.grahamrust.me/media/posts/10/vrball.jpg" alt="" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://www.grahamrust.me/media/posts/10/responsive/vrball-xs.jpg 640w ,https://www.grahamrust.me/media/posts/10/responsive/vrball-sm.jpg 768w ,https://www.grahamrust.me/media/posts/10/responsive/vrball-md.jpg 1024w ,https://www.grahamrust.me/media/posts/10/responsive/vrball-lg.jpg 1366w ,https://www.grahamrust.me/media/posts/10/responsive/vrball-xl.jpg 1600w ,https://www.grahamrust.me/media/posts/10/responsive/vrball-2xl.jpg 1920w"></a></p>
 <p class="align-center">Printed with Anycubic Photon S 3D printer</p>
 <p class="align-center"><a href="https://www.grahamrust.me/media/posts/10/halfvrball.jpg"><img loading="lazy" src="https://www.grahamrust.me/media/posts/10/halfvrball.jpg" alt="" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://www.grahamrust.me/media/posts/10/responsive/halfvrball-xs.jpg 640w ,https://www.grahamrust.me/media/posts/10/responsive/halfvrball-sm.jpg 768w ,https://www.grahamrust.me/media/posts/10/responsive/halfvrball-md.jpg 1024w ,https://www.grahamrust.me/media/posts/10/responsive/halfvrball-lg.jpg 1366w ,https://www.grahamrust.me/media/posts/10/responsive/halfvrball-xl.jpg 1600w ,https://www.grahamrust.me/media/posts/10/responsive/halfvrball-2xl.jpg 1920w"></a></p>
@@ -136,6 +138,36 @@
         </content>
     </entry>
     <entry>
+        <title>Mixed Reality Robo Recall Mod</title>
+        <author>
+            <name>Graham Rust</name>
+        </author>
+        <link href="https://www.grahamrust.me/blog/mixed-reality-robo-recall-mod/index.html"/>
+        <id>https://www.grahamrust.me/blog/mixed-reality-robo-recall-mod/index.html</id>
+
+        <updated>2017-06-28T11:38:00-04:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    A room-scale cover-based mod with no need to teleport. Use power-ups, grenades, whips, and more to defeat 5 waves of enemies before your final showdown with Odin. Here's the Unlimited Ammo power-up in action: Downloads: Full Mod Lightsaber, for use in any level: Replace Pistol&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <figure class="post__video"><iframe loading="lazy" width="700" height="393" src="https://www.youtube.com/embed/G510n7IValE" allowfullscreen="allowfullscreen" data-mce-fragment="1"></iframe></figure>
+<p>A room-scale cover-based mod with no need to teleport. Use power-ups, grenades, whips, and more to defeat 5 waves of enemies before your final showdown with Odin.</p>
+<figure class="post__image"><img loading="lazy" src="https://www.grahamrust.me/media/posts/18/power-ups.webp" alt="" width="700" height="274" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://www.grahamrust.me/media/posts/18/responsive/power-ups-xs.webp 640w ,https://www.grahamrust.me/media/posts/18/responsive/power-ups-sm.webp 768w ,https://www.grahamrust.me/media/posts/18/responsive/power-ups-md.webp 1024w ,https://www.grahamrust.me/media/posts/18/responsive/power-ups-lg.webp 1366w ,https://www.grahamrust.me/media/posts/18/responsive/power-ups-xl.webp 1600w ,https://www.grahamrust.me/media/posts/18/responsive/power-ups-2xl.webp 1920w">
+<figcaption>Power-ups: More Damage, Unlimited Ammo, Invincibility, and Slo-Mo.</figcaption>
+</figure>
+<p>Here's the Unlimited Ammo power-up in action:</p>
+<p><strong style="background-color: #2a2b34; font-size: inherit;">Downloads:</strong></p>
+<p><a href="https://drive.google.com/file/d/0BzT5Ou-RbJkjazREb3BwTG1MQ1k/view?resourcekey=0-vc7S-O6_ybjhyE2K9VgZMQ&amp;usp=sharing" target="" style="background-color: #2a2b34; font-size: inherit;" tabindex="0">Full Mod</a></p>
+<p><span style="background-color: #2a2b34; font-size: inherit;">Lightsaber, for use in any level:</span></p>
+<p><a href="https://drive.google.com/file/d/0BzT5Ou-RbJkjS0FNUFhpOG5NdFk/view?resourcekey=0-s_ZmO0FiCH19_tHUkwrsNw&amp;usp=sharing" target="_blank" rel="noopener" style="background-color: #2a2b34; font-size: inherit;" tabindex="0">Replace Pistol</a></p>
+<p><a href="https://drive.google.com/file/d/0BzT5Ou-RbJkjaUUtZnBweXRUOTA/view?resourcekey=0-Htb7sgFrmfocRFti7Dhq1Q&amp;usp=sharing" target="_blank" rel="noopener" style="background-color: #2a2b34; font-size: inherit;" tabindex="0">Replace Shotgun</a></p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
         <title>Living Room Comparisons</title>
         <author>
             <name>Graham Rust</name>
@@ -165,6 +197,41 @@
 <div class="align-center">
 <div class="align-center"><a href="https://www.grahamrust.me/media/posts/13/image-asset1.jpeg"><img loading="lazy" src="https://www.grahamrust.me/media/posts/13/image-asset1.jpeg" width="700" height="534" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://www.grahamrust.me/media/posts/13/responsive/image-asset1-xs.jpeg 640w ,https://www.grahamrust.me/media/posts/13/responsive/image-asset1-sm.jpeg 768w ,https://www.grahamrust.me/media/posts/13/responsive/image-asset1-md.jpeg 1024w ,https://www.grahamrust.me/media/posts/13/responsive/image-asset1-lg.jpeg 1366w ,https://www.grahamrust.me/media/posts/13/responsive/image-asset1-xl.jpeg 1600w ,https://www.grahamrust.me/media/posts/13/responsive/image-asset1-2xl.jpeg 1920w"></a></div>
 </div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Mixed Reality Bedroom</title>
+        <author>
+            <name>Graham Rust</name>
+        </author>
+        <link href="https://www.grahamrust.me/blog/mixed-reality-bedroom/index.html"/>
+        <id>https://www.grahamrust.me/blog/mixed-reality-bedroom/index.html</id>
+
+        <updated>2016-08-05T11:51:00-04:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Click here to download my Snoo character with headset. Portal 2 gun can be found here Thanks for checking out my room!
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <figure class="post__video post__image"><figure class="post__image"><img loading="lazy"  src="https://www.grahamrust.me/media/posts/19/1ab.webp" alt="" width="700" height="983" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://www.grahamrust.me/media/posts/19/responsive/1ab-xs.webp 640w ,https://www.grahamrust.me/media/posts/19/responsive/1ab-sm.webp 768w ,https://www.grahamrust.me/media/posts/19/responsive/1ab-md.webp 1024w ,https://www.grahamrust.me/media/posts/19/responsive/1ab-lg.webp 1366w ,https://www.grahamrust.me/media/posts/19/responsive/1ab-xl.webp 1600w ,https://www.grahamrust.me/media/posts/19/responsive/1ab-2xl.webp 1920w"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://www.grahamrust.me/media/posts/19/2ab.webp" alt="" width="1000" height="793" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://www.grahamrust.me/media/posts/19/responsive/2ab-xs.webp 640w ,https://www.grahamrust.me/media/posts/19/responsive/2ab-sm.webp 768w ,https://www.grahamrust.me/media/posts/19/responsive/2ab-md.webp 1024w ,https://www.grahamrust.me/media/posts/19/responsive/2ab-lg.webp 1366w ,https://www.grahamrust.me/media/posts/19/responsive/2ab-xl.webp 1600w ,https://www.grahamrust.me/media/posts/19/responsive/2ab-2xl.webp 1920w"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://www.grahamrust.me/media/posts/19/3ab.webp" alt="" width="1000" height="834" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://www.grahamrust.me/media/posts/19/responsive/3ab-xs.webp 640w ,https://www.grahamrust.me/media/posts/19/responsive/3ab-sm.webp 768w ,https://www.grahamrust.me/media/posts/19/responsive/3ab-md.webp 1024w ,https://www.grahamrust.me/media/posts/19/responsive/3ab-lg.webp 1366w ,https://www.grahamrust.me/media/posts/19/responsive/3ab-xl.webp 1600w ,https://www.grahamrust.me/media/posts/19/responsive/3ab-2xl.webp 1920w"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://www.grahamrust.me/media/posts/19/4ab.webp" alt="" width="1000" height="874" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://www.grahamrust.me/media/posts/19/responsive/4ab-xs.webp 640w ,https://www.grahamrust.me/media/posts/19/responsive/4ab-sm.webp 768w ,https://www.grahamrust.me/media/posts/19/responsive/4ab-md.webp 1024w ,https://www.grahamrust.me/media/posts/19/responsive/4ab-lg.webp 1366w ,https://www.grahamrust.me/media/posts/19/responsive/4ab-xl.webp 1600w ,https://www.grahamrust.me/media/posts/19/responsive/4ab-2xl.webp 1920w"></figure>
+<p>Click <a href="https://graham-rust.squarespace.com/s/DKSnoo.fbx" tabindex="0">here</a> to download my Snoo character with headset. Portal 2 gun can be found <a target="_blank" href="http://tf3dm.com/3d-model/portal-gun-from-portal-2-74735.html" rel="noopener" tabindex="0">here</a></p>
+<figure class="post__image"><a target="_blank" href="http://tf3dm.com/3d-model/portal-gun-from-portal-2-74735.html" rel="noopener" tabindex="0"><img loading="lazy"  src="https://www.grahamrust.me/media/posts/19/5ab.webp" alt="" width="1000" height="1333" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://www.grahamrust.me/media/posts/19/responsive/5ab-xs.webp 640w ,https://www.grahamrust.me/media/posts/19/responsive/5ab-sm.webp 768w ,https://www.grahamrust.me/media/posts/19/responsive/5ab-md.webp 1024w ,https://www.grahamrust.me/media/posts/19/responsive/5ab-lg.webp 1366w ,https://www.grahamrust.me/media/posts/19/responsive/5ab-xl.webp 1600w ,https://www.grahamrust.me/media/posts/19/responsive/5ab-2xl.webp 1920w"></figure></a></p>
+Built my own Oasis console. Video game models are from Models-Resource
+<figure class="post__image"><img loading="lazy"  src="https://www.grahamrust.me/media/posts/19/6ab.webp" alt="" width="1000" height="890" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://www.grahamrust.me/media/posts/19/responsive/6ab-xs.webp 640w ,https://www.grahamrust.me/media/posts/19/responsive/6ab-sm.webp 768w ,https://www.grahamrust.me/media/posts/19/responsive/6ab-md.webp 1024w ,https://www.grahamrust.me/media/posts/19/responsive/6ab-lg.webp 1366w ,https://www.grahamrust.me/media/posts/19/responsive/6ab-xl.webp 1600w ,https://www.grahamrust.me/media/posts/19/responsive/6ab-2xl.webp 1920w"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://www.grahamrust.me/media/posts/19/image-asset.jpeg" alt="" width="784" height="434" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://www.grahamrust.me/media/posts/19/responsive/image-asset-xs.jpeg 640w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-sm.jpeg 768w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-md.jpeg 1024w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-lg.jpeg 1366w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-xl.jpeg 1600w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-2xl.jpeg 1920w"></figure>
+<figure class="post__image"><img loading="lazy"  src="https://www.grahamrust.me/media/posts/19/image-asset.webp" alt="" width="784" height="434" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://www.grahamrust.me/media/posts/19/responsive/image-asset-xs.webp 640w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-sm.webp 768w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-md.webp 1024w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-lg.webp 1366w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-xl.webp 1600w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-2xl.webp 1920w"></figure>
+Added some ambience with models from Oculus Home. Also took apart the wood pile and made a campfire.
+<figure class="post__image"><a href="https://imgur.com/a/itoh6"  target="_blank" rel="noopener noreferrer"><img loading="lazy" class="post__image" src="https://www.grahamrust.me/media/posts/19/image-asset-2.webp" alt="" width="960" height="479" sizes="(max-width: 1920px) 100vw, 1920px" srcset="https://www.grahamrust.me/media/posts/19/responsive/image-asset-2-xs.webp 640w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-2-sm.webp 768w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-2-md.webp 1024w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-2-lg.webp 1366w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-2-xl.webp 1600w ,https://www.grahamrust.me/media/posts/19/responsive/image-asset-2-2xl.webp 1920w"></figure></a>I have a clock on the wall that shows the actual time. This gif is sped up to show the movement of the minute hand. This is made using <a target="_blank" href="https://www.unrealengine.com/marketplace/real-time-clock" rel="noopener" tabindex="0">Real Time Clock</a> on the UE4 Marketplace.</p>
+<p>Thanks for checking out my room!</p>
+<a target="_blank" href="http://tf3dm.com/3d-model/portal-gun-from-portal-2-74735.html" rel="noopener" tabindex="0"></a>
+<p> </p>
+</figure>
             ]]>
         </content>
     </entry>
