@@ -669,6 +669,18 @@ html.graham-theme-dark .graham-theme-toggle {
   width: 100%;
 }
 
+.graham-home__tiles .graham-home__tile-image--dark {
+  display: none;
+}
+
+html.graham-theme-dark .graham-home__tiles .graham-home__tile-image--light {
+  display: none;
+}
+
+html.graham-theme-dark .graham-home__tiles .graham-home__tile-image--dark {
+  display: block;
+}
+
 .footer__social img {
   display: inline-block;
   height: 44px;
@@ -2099,6 +2111,74 @@ html.graham-theme-dark code {
   background-color: #292929;
 }
 
+.content__share {
+  position: relative;
+}
+
+.content__share-button {
+  color: #333940;
+}
+
+.content__share-button:hover,
+.content__share-button:focus,
+.content__share-button:active,
+.content__share-button.is-active {
+  background-color: #333940;
+  border-color: #333940;
+  box-shadow: none;
+  color: #fff;
+}
+
+.content__share-popup {
+  bottom: calc(100% + 0.65rem);
+  left: 50%;
+  width: 9.75rem;
+  right: auto;
+  translate: -50% 0;
+}
+
+.content__share-popup > a {
+  white-space: nowrap;
+}
+
+.content__share-popup.is-visible {
+  -webkit-animation: graham-share-popup 240ms ease-out backwards;
+          animation: graham-share-popup 240ms ease-out backwards;
+  transform-origin: center bottom;
+}
+
+@-webkit-keyframes graham-share-popup {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.94);
+            transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes graham-share-popup {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.94);
+            transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.content__share-button.is-active {
+  background-color: #333940;
+  border-color: #333940;
+  color: #fff;
+}
+
 html.graham-theme-dark .content__share-popup > a:hover {
   background: #202020;
 }
@@ -2116,12 +2196,24 @@ html.graham-theme-dark button {
 
 html.graham-theme-dark .content__tag > li > a:hover,
 html.graham-theme-dark .content__share-button:hover,
+html.graham-theme-dark .content__share-button:focus,
+html.graham-theme-dark .content__share-button:active,
+html.graham-theme-dark .content__share-button.is-active,
 html.graham-theme-dark .footer__bttop:hover,
 html.graham-theme-dark .btn:hover,
 html.graham-theme-dark [type="button"]:hover,
 html.graham-theme-dark [type="submit"]:hover,
 html.graham-theme-dark button:hover {
   border-color: rgba(255, 255, 255, 0.42);
+}
+
+html.graham-theme-dark .content__share-button:hover,
+html.graham-theme-dark .content__share-button:focus,
+html.graham-theme-dark .content__share-button:active,
+html.graham-theme-dark .content__share-button.is-active {
+  background-color: #ece8e0;
+  border-color: #ece8e0;
+  color: #202020;
 }
 
 html.graham-theme-dark .graham-nav-toggle,

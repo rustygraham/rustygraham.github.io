@@ -20,6 +20,40 @@
   }
 
   setupTweetTheme();
+  preloadAlternateHomeTileImages();
+
+  function preloadAlternateHomeTileImages() {
+    var tileImages = document.querySelectorAll('.graham-home__tile-image');
+
+    if (!tileImages.length) {
+      return;
+    }
+
+    function warmTileImages() {
+      var seen = {};
+
+      for (var imageIndex = 0; imageIndex < tileImages.length; imageIndex++) {
+        var src = tileImages[imageIndex].currentSrc || tileImages[imageIndex].src;
+
+        if (!src || seen[src]) {
+          continue;
+        }
+
+        seen[src] = true;
+        var preloadImage = new Image();
+        preloadImage.decoding = 'async';
+        preloadImage.src = src;
+      }
+    }
+
+    if (document.readyState === 'complete') {
+      window.setTimeout(warmTileImages, 350);
+    } else {
+      window.addEventListener('load', function () {
+        window.setTimeout(warmTileImages, 350);
+      }, { once: true });
+    }
+  }
 
   function setupTweetTheme() {
     var tweetWrappers = document.querySelectorAll('.js-graham-tweet');

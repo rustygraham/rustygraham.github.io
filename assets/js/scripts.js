@@ -703,6 +703,19 @@ if (searchButton && searchOverlay) {
     const sharePopup = document.querySelector('.js-content__share-popup');
 
     if (shareButton && sharePopup) {
+        shareButton.setAttribute('aria-haspopup', 'true');
+        shareButton.setAttribute('aria-expanded', 'false');
+
+        function setSharePopup(open) {
+            sharePopup.classList.toggle('is-visible', open);
+            shareButton.classList.toggle('is-active', open);
+            shareButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+
+            if (!open) {
+                shareButton.blur();
+            }
+        }
+
         sharePopup.addEventListener('click', function (e) {
             e.stopPropagation();
         });
@@ -710,11 +723,11 @@ if (searchButton && searchOverlay) {
         shareButton.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
-            sharePopup.classList.toggle('is-visible');
+            setSharePopup(!sharePopup.classList.contains('is-visible'));
         });
 
         document.body.addEventListener('click', function () {
-            sharePopup.classList.remove('is-visible');
+            setSharePopup(false);
         });
     }
 
@@ -739,8 +752,11 @@ if (searchButton && searchOverlay) {
         if (!target) return;
 
         // hide share popup
-        if (sharePopup) {
+        if (sharePopup && shareButton) {
             sharePopup.classList.remove('is-visible');
+            shareButton.classList.remove('is-active');
+            shareButton.setAttribute('aria-expanded', 'false');
+            shareButton.blur();
         }
 
         // popup position
