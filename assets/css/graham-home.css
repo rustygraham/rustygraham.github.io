@@ -1089,7 +1089,8 @@ body.graham-page--blog .navbar .navbar__menu > li.is-active > a {
 }
 
 .graham-portfolio__vr-images img.graham-portfolio__lightbox-trigger,
-.graham-portfolio__gallery img.graham-portfolio__lightbox-trigger {
+.graham-portfolio__gallery img.graham-portfolio__lightbox-trigger,
+.graham-post .content__entry img.graham-post__lightbox-trigger {
   cursor: zoom-in;
 }
 
@@ -1172,6 +1173,10 @@ body.graham-lightbox-open {
 .graham-lightbox__stage .graham-carousel__arrow:focus-visible {
   opacity: 1;
   visibility: visible;
+}
+
+.graham-lightbox.is-single-image .graham-carousel__arrow {
+  display: none;
 }
 
 .graham-video-lightbox__frame {
@@ -1388,6 +1393,13 @@ body.graham-lightbox-open {
   margin-left: auto;
   margin-right: auto;
   max-width: 720px;
+}
+
+.graham-post .content__entry figcaption,
+.graham-post .content__entry .caption {
+  font-size: 16px;
+  line-height: 1.55;
+  padding-top: 10px;
 }
 
 .graham-post .content__entry .post__video:has(> .post__iframe) {

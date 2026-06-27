@@ -12,6 +12,18 @@
     setupLightbox(lightbox, lightboxTriggers);
   }
 
+  var postLightbox = document.querySelector('.js-graham-post-lightbox');
+  var postLightboxTriggers = document.querySelectorAll('.graham-post .content__entry img');
+
+  if (postLightbox && postLightboxTriggers.length) {
+    setupLightbox(postLightbox, postLightboxTriggers, {
+      singleImage: true,
+      triggerClass: 'graham-post__lightbox-trigger',
+      triggerLabel: 'Open expanded blog image',
+      fallbackAlt: 'Blog post image'
+    });
+  }
+
   var videoLightbox = document.querySelector('.js-graham-video-lightbox');
   var videoTriggers = document.querySelectorAll('.js-graham-video-trigger');
 
@@ -272,13 +284,48 @@
     updateDots();
   }
 
-  function setupLightbox(lightboxElement, triggers) {
+  function setupLightbox(lightboxElement, triggers, options) {
+    options = options || {};
     var image = lightboxElement.querySelector('.js-graham-lightbox-image');
     var closeButton = lightboxElement.querySelector('.js-graham-lightbox-close');
     var previousButton = lightboxElement.querySelector('.js-graham-lightbox-previous');
     var nextButton = lightboxElement.querySelector('.js-graham-lightbox-next');
+    var singleImage = !!options.singleImage;
+    var triggerClass = options.triggerClass || 'graham-portfolio__lightbox-trigger';
+    var triggerLabel = options.triggerLabel || 'Open image';
+    var fallbackAlt = options.fallbackAlt || 'Portfolio gallery image';
     var index = 0;
     var returnFocus = null;
+
+    function isImageUrl(url) {
+      return /^data:image\//.test(url) || /\.(avif|gif|jpe?g|png|svg|webp)([?#].*)?$/i.test(url);
+    }
+
+    function getLinkedImage(trigger) {
+      var link = trigger.closest('a');
+
+      if (!link) {
+        return '';
+      }
+
+      var href = link.getAttribute('href') || '';
+
+      if (isImageUrl(href)) {
+        return link.href;
+      }
+
+      return '';
+    }
+
+    function shouldSkipTrigger(trigger) {
+      var link = trigger.closest('a');
+
+      return singleImage && link && !getLinkedImage(trigger);
+    }
+
+    function getImageSource(trigger) {
+      return getLinkedImage(trigger) || trigger.currentSrc || trigger.getAttribute('data-src') || trigger.src;
+    }
 
     function showImage(nextIndex) {
       if (nextIndex < 0) {
@@ -288,14 +335,15 @@
       }
 
       index = nextIndex;
-      image.src = triggers[index].currentSrc || triggers[index].src;
-      image.alt = triggers[index].alt || 'Portfolio gallery image ' + (index + 1);
+      image.src = getImageSource(triggers[index]);
+      image.alt = triggers[index].alt || fallbackAlt + ' ' + (index + 1);
     }
 
     function openLightbox(nextIndex, trigger) {
       returnFocus = trigger;
       showImage(nextIndex);
       lightboxElement.classList.add('is-open');
+      lightboxElement.classList.toggle('is-single-image', singleImage || triggers.length < 2);
       lightboxElement.setAttribute('aria-hidden', 'false');
       document.body.classList.add('graham-lightbox-open');
       closeButton.focus();
@@ -312,29 +360,42 @@
     }
 
     for (var triggerIndex = 0; triggerIndex < triggers.length; triggerIndex++) {
-      triggers[triggerIndex].classList.add('graham-portfolio__lightbox-trigger');
+      if (shouldSkipTrigger(triggers[triggerIndex])) {
+        continue;
+      }
+
+      triggers[triggerIndex].classList.add(triggerClass);
       triggers[triggerIndex].setAttribute('tabindex', '0');
       triggers[triggerIndex].setAttribute('role', 'button');
-      triggers[triggerIndex].setAttribute('aria-label', 'Open image ' + (triggerIndex + 1) + ' of ' + triggers.length);
+      triggers[triggerIndex].setAttribute('aria-label', singleImage ? triggerLabel : triggerLabel + ' ' + (triggerIndex + 1) + ' of ' + triggers.length);
       triggers[triggerIndex].setAttribute('data-lightbox-index', triggerIndex);
-      triggers[triggerIndex].addEventListener('click', function () {
+      triggers[triggerIndex].addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
         openLightbox(parseInt(this.getAttribute('data-lightbox-index'), 10), this);
       });
       triggers[triggerIndex].addEventListener('keydown', function (event) {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
+          event.stopPropagation();
           openLightbox(parseInt(this.getAttribute('data-lightbox-index'), 10), this);
         }
       });
     }
 
     closeButton.addEventListener('click', closeLightbox);
-    previousButton.addEventListener('click', function () {
-      showImage(index - 1);
-    });
-    nextButton.addEventListener('click', function () {
-      showImage(index + 1);
-    });
+
+    if (previousButton) {
+      previousButton.addEventListener('click', function () {
+        showImage(index - 1);
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener('click', function () {
+        showImage(index + 1);
+      });
+    }
 
     document.addEventListener('keydown', function (event) {
       if (!lightboxElement.classList.contains('is-open')) {
@@ -345,11 +406,11 @@
         event.preventDefault();
         event.stopPropagation();
         closeLightbox();
-      } else if (event.key === 'ArrowLeft') {
+      } else if (!singleImage && event.key === 'ArrowLeft') {
         event.preventDefault();
         event.stopPropagation();
         showImage(index - 1);
-      } else if (event.key === 'ArrowRight') {
+      } else if (!singleImage && event.key === 'ArrowRight') {
         event.preventDefault();
         event.stopPropagation();
         showImage(index + 1);
