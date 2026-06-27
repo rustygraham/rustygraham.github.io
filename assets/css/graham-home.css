@@ -1390,6 +1390,22 @@ body.graham-lightbox-open {
   max-width: 720px;
 }
 
+.graham-post .content__entry .post__video,
+.graham-post .content__entry .post__iframe {
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.graham-post .content__entry p + .post__video,
+.graham-post .content__entry p + .post__iframe {
+  margin-top: 18px;
+}
+
+.graham-post .content__entry .post__video + p,
+.graham-post .content__entry .post__iframe + p {
+  margin-top: 18px;
+}
+
 .graham-post .content__nav .wrapper {
   max-width: 1026px;
   padding-left: 0;
