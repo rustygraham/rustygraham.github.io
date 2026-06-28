@@ -6,6 +6,12 @@
   src: url("../dynamic/fonts/cabin/cabin.woff2") format("woff2");
 }
 
+@property --graham-nav-glass-height {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 54px;
+}
+
 .home-template {
   --body-font: "Cabin Graham", "Cabin", Arial, sans-serif;
   --heading-font: var(--body-font);
@@ -64,9 +70,11 @@ html.graham-theme-dark:has(body.post-template) {
 
 .home-template .top,
 body:is(.page-template, .blogindex-template, .post-template) .top {
+  --graham-nav-glass-height: 54px;
   background: transparent;
   isolation: isolate;
   overflow: visible;
+  z-index: 30;
 }
 
 .home-template .top::before,
@@ -76,7 +84,7 @@ body:is(.page-template, .blogindex-template, .post-template) .top::before {
   background: rgba(255, 255, 255, 0.76);
   content: "";
   inset: 0;
-  pointer-events: none;
+  pointer-events: auto;
   position: absolute;
   z-index: 0;
 }
@@ -107,7 +115,7 @@ body:is(.page-template, .blogindex-template, .post-template) .top > .graham-glas
   bottom: auto;
   height: var(--graham-edge-thickness);
   left: 0;
-  pointer-events: none;
+  pointer-events: auto;
   position: absolute;
   right: 0;
   top: 54px;
@@ -1658,6 +1666,7 @@ body:is(.page-template, .blogindex-template, .post-template) .footer__social svg
   .home-template .top,
   body:is(.page-template, .blogindex-template, .post-template) .top {
     overflow: visible;
+    transition: --graham-nav-glass-height 300ms ease-in-out;
   }
 
   .home-template .top .logo,
@@ -1672,26 +1681,30 @@ body:is(.page-template, .blogindex-template, .post-template) .footer__social svg
   .home-template .top::after,
   body:is(.page-template, .blogindex-template, .post-template) .top::after {
     bottom: auto;
-    height: 54px;
+    height: var(--graham-nav-glass-height);
     top: 0;
-    transition: height 300ms ease-in-out;
   }
 
   .home-template .top > .graham-glass-edge,
   body:is(.page-template, .blogindex-template, .post-template) .top > .graham-glass-edge {
-    transition: top 300ms ease-in-out;
+    top: var(--graham-nav-glass-height);
+  }
+
+  .home-template .top.is-menu-open,
+  body:is(.page-template, .blogindex-template, .post-template) .top.is-menu-open {
+    --graham-nav-glass-height: 110px;
   }
 
   .home-template .top.is-menu-open::before,
   body:is(.page-template, .blogindex-template, .post-template) .top.is-menu-open::before,
   .home-template .top.is-menu-open::after,
   body:is(.page-template, .blogindex-template, .post-template) .top.is-menu-open::after {
-    height: 110px;
+    height: var(--graham-nav-glass-height);
   }
 
   .home-template .top.is-menu-open > .graham-glass-edge,
   body:is(.page-template, .blogindex-template, .post-template) .top.is-menu-open > .graham-glass-edge {
-    top: 110px;
+    top: var(--graham-nav-glass-height);
   }
 
   .graham-default-nav {
@@ -1733,7 +1746,7 @@ body:is(.page-template, .blogindex-template, .post-template) .footer__social svg
     visibility: visible;
   }
 
-  .top.is-menu-open .graham-theme-toggle {
+  .graham-default-nav .navbar__menu .graham-theme-toggle {
     transform: translateY(0);
   }
 
